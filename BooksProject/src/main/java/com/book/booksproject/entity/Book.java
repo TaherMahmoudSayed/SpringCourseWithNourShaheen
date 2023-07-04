@@ -2,6 +2,7 @@ package com.book.booksproject.entity;
 
 
 import com.book.booksproject.base.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,11 +22,12 @@ public class Book extends BaseEntity {
 
     private String name;
     private double price;
+    private String bookImage;
     @Transient //will not be saved on database, computed colum
-
     private double discounted;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
+    @JsonBackReference
     private Author author;
 
 

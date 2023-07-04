@@ -20,7 +20,7 @@ public class ApplicationStartup implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // adding some data for authers
+        // adding some data for authors
         if (authorService.findAll().isEmpty()) {
             Author author1 = new Author();
             author1.setFullName("ALi");

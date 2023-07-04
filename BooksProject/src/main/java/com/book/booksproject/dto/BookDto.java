@@ -13,6 +13,6 @@ public class BookDto {
     private String authorName;
     private String authorEmail;
     private Boolean isFavorite;
-
+    private String bookImage;
 
 }

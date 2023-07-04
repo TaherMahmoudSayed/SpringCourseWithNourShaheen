@@ -1,9 +1,6 @@
 package com.book.booksproject.base;
 
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,14 +21,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public abstract class BaseEntity {
 
+// linkedin.com/pulse/asynchronous-calls-spring-boot-using-async-annotation
+    private String statusCode;
     @CreatedBy
     private String createdBy;
-    private String statusCode;
     @CreatedDate
     private LocalDateTime createdDate;
     @LastModifiedBy
     private String lastModifiedBy;
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
+    @Column(name = "is_deleted")
+    private boolean isDeleted;
 
 }

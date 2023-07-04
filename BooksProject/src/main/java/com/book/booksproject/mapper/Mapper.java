@@ -26,6 +26,7 @@ public class Mapper {
                 .author(Mapper.authorToAuthorDto(book.getAuthor()))
                 .name(book.getName())
                 .price(book.getPrice())
+                .bookImage(book.getBookImage())
                 .authorEmail(book.getAuthor().getEmail())
                 .build();
     }
@@ -34,6 +35,7 @@ public class Mapper {
         return BookDto.builder()
                 .name(book.getName())
                 .price(book.getPrice())
+                .bookImage(book.getBookImage())
                 .build();
     }
 
@@ -43,6 +45,7 @@ public class Mapper {
                 .price(dto.getPrice())
                 .author(null)
                 .discounted(0)
+                .bookImage(dto.getBookImage())
                 .build();
     }
 

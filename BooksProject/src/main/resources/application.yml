@@ -12,7 +12,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
     hibernate:
-      ddl-auto: create # or "create", "create-drop", "none"
+      ddl-auto: create-drop # or "create", "create-drop", "none"
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true # Set this to false in production
@@ -25,4 +25,10 @@ spring:
     file:
       name: myapp.log
       path: G:\javaProjects\we Projects\1stTask BWC\log\myapp.log
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: on
+    validate-migration-naming: true
 

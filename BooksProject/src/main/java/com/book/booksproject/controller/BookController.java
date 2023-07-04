@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping(value = "api/v1/books")
 @RequiredArgsConstructor
 public class BookController {
 
@@ -31,7 +31,7 @@ public class BookController {
         return ResponseEntity.ok(dto);
     }
 
-    @GetMapping()
+    @GetMapping("")
     public ResponseEntity<?> findAll() {
 
         return ResponseEntity.ok(bookService.findAll());
