@@ -13,6 +13,7 @@ public class BooksProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(BooksProjectApplication.class, args);
         log.info("app is starting");
+
     }
 
 }

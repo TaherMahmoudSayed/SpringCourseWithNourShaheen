@@ -41,12 +41,12 @@ public class PriceScheduler {
         Thread.sleep(40000);
         log.info("message from computePrice at:"+ LocalDateTime.now());
     }*/
-    @SchedulerLock(name = "computeBookCountScheduler",lockAtLeastFor = "10s")
+   /* @SchedulerLock(name = "computeBookCountScheduler",lockAtLeastFor = "10s")
     @Scheduled(fixedRate = 4000,initialDelay = 10000)
     @Async
     public  void computeBookCount() throws InterruptedException {
         Thread.sleep(8000);
         log.info("message from computeBookCount at:"+ LocalDateTime.now());
-    }
+    }*/
 
 }

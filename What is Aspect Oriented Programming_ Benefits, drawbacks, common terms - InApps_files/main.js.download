@@ -1,0 +1,33 @@
+jQuery(document).ready(function($) {
+    $('form.inapps_lead_contact_form').submit(function(e) {
+        e.preventDefault();
+        let app = $(this);
+        var formData = new FormData($('form')[0]);
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: '/wp-admin/admin-ajax.php',
+            processData: false,
+            contentType: false,
+            data: formData,
+            beforeSend: function() {
+                $('.btn-shortcode-submit').val('Sending...');
+                $('.btn-shortcode-submit').attr('disabled', !0)
+            },
+            success: function(data) {
+
+                $('.btn-shortcode-submit').val('Sent');
+                $('.btn-shortcode-submit').attr('disabled', !1)
+                app.trigger('reset');
+                $('.contact-container').addClass('active');
+                $('.contact-container p').css('text-align', 'center');
+                $('.contact-container p').css('text-align', 'center');
+
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        })
+    });
+});

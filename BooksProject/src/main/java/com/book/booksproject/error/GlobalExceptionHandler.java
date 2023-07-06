@@ -26,7 +26,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
             .success(false)
             .dateTime(LocalDateTime.now())
             .details(Arrays.asList(ex.getMessage()))
-            .message(ex.getLocalizedMessage())
+            .errorMessage(ex.getLocalizedMessage())
             .build();
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
 
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
                 .success(false)
                 .dateTime(LocalDateTime.now())
                 .details(Arrays.asList(ex.getMessage()))
-                .message(ex.getLocalizedMessage())
+                .errorMessage(ex.getLocalizedMessage())
                 .build();
         return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
 
@@ -48,7 +48,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
                 .success(false)
                 .dateTime(LocalDateTime.now())
                 .details(Arrays.asList(ex.getMessage()))
-                .message(ex.getLocalizedMessage())
+                .errorMessage(ex.getLocalizedMessage())
                 .build();
         return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
 
@@ -71,7 +71,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler  {
                 .success(false)
                 .dateTime(LocalDateTime.now())
                 .details(errors)
-                .message(ex.getLocalizedMessage())
+                .errorMessage(ex.getLocalizedMessage())
                 .build();
 
         return ResponseEntity

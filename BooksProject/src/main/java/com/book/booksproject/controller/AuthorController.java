@@ -87,7 +87,7 @@ public class AuthorController {
     public ResponseEntity<ErrorResponse> handleAuthorNotFound(RecordNotFoundEX exc) {
         ErrorResponse error=ErrorResponse.builder()
                 .dateTime(LocalDateTime.now())
-                .message(exc.getMessage())
+                .errorMessage(exc.getMessage())
                 .success(false).build();
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
